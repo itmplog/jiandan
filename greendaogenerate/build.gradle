@@ -1,0 +1,20 @@
+apply plugin: 'java'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    compile 'de.greenrobot:greendao-generator:2.1.0'
+}
+sourceSets {
+    main {
+        java {
+            srcDir 'src/main/java'
+        }
+    }
+}
+artifacts {
+    archives jar
+}
