@@ -4,7 +4,6 @@ import android.app.Application;
 import android.content.Context;
 import android.graphics.Color;
 
-import com.android.volley.toolbox.Volley;
 import com.facebook.stetho.Stetho;
 import com.facebook.stetho.okhttp3.StethoInterceptor;
 import com.socks.jiandan.BuildConfig;
@@ -36,16 +35,16 @@ public class JDApplication extends Application {
     public void onCreate() {
         StrictModeUtil.init(); //StrictMode 线程监控， VM监控
         super.onCreate();
-        refWatcher = LeakCanary.install(this);
+        refWatcher = LeakCanary.install(this); // init LeakCanary
         mContext = this;
-        ImageLoadProxy.initImageLoader(this);
+        ImageLoadProxy.initImageLoader(this); //universalImageLoader init
 
         if (BuildConfig.DEBUG) {
-            Logger.init().setMethodCount(1).setLogLevel(LogLevel.FULL);
+            Logger.init().setMethodCount(1).setLogLevel(LogLevel.FULL); //Log init
             //hideThreadInfo().setMethodCount(1).setLogLevel(LogLevel.FULL);
         }
 
-        Stetho.initialize(
+        Stetho.initialize( //Stetho init
                 Stetho.newInitializerBuilder(this)
                         .enableDumpapp(Stetho.defaultDumperPluginsProvider(this))
                         .enableWebKitInspector(Stetho.defaultInspectorModulesProvider(this))

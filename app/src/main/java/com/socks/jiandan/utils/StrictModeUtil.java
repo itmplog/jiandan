@@ -15,7 +15,7 @@ public class StrictModeUtil {
     private static boolean isShow = false;
 
     public static void init() {
-        if (true && BuildConfig.DEBUG && Build.VERSION.SDK_INT > Build.VERSION_CODES.FROYO) {
+        if (isShow && BuildConfig.DEBUG && Build.VERSION.SDK_INT > Build.VERSION_CODES.FROYO) {
 
             //线程监控，会弹框哦
             StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
