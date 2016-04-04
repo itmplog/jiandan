@@ -29,9 +29,6 @@ import com.socks.jiandan.utils.ShowToast;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -52,7 +49,7 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
+
         initView();
         initData();
     }
@@ -78,7 +75,7 @@ public class MainActivity extends BaseActivity {
             }
         };
         mActionBarDrawerToggle.syncState();
-        mDrawerLayout.setDrawerListener(mActionBarDrawerToggle);
+        mDrawerLayout.addDrawerListener(mActionBarDrawerToggle);
 
         replaceFragment(R.id.frame_container, new FreshNewsFragment());
         replaceFragment(R.id.drawer_container, new MainMenuFragment());
@@ -115,6 +112,7 @@ public class MainActivity extends BaseActivity {
     protected void onStop() {
         super.onStop();
         EventBus.getDefault().unregister(this);
+        mDrawerLayout.removeDrawerListener(mActionBarDrawerToggle);
     }
 
     @Subscribe

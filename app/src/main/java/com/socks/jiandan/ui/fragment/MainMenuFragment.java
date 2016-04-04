@@ -1,6 +1,7 @@
 package com.socks.jiandan.ui.fragment;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -40,11 +41,11 @@ public class MainMenuFragment extends BaseFragment {
     private MenuItem.FragmentType currentFragment = MenuItem.FragmentType.FreshNews;
 
     @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
+    public void onAttach(Context context) {
+        super.onAttach(context);
 
-        if (activity instanceof MainActivity) {
-            mainActivity = (MainActivity) activity;
+        if (context instanceof MainActivity) {
+            mainActivity = (MainActivity) context;
         } else {
             throw new IllegalArgumentException("The activity must be a MainActivity !");
         }
