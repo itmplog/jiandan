@@ -125,7 +125,7 @@ public class MainActivity extends BaseActivity {
                         .title("无网络连接")
                         .content("去开启网络?")
                         .positiveText("是")
-                        .backgroundColor(getResources().getColor(JDApplication.COLOR_OF_DIALOG))
+                        .backgroundColor(R.color.primary)
                         .contentColor(JDApplication.COLOR_OF_DIALOG_CONTENT)
                         .positiveColor(JDApplication.COLOR_OF_DIALOG_CONTENT)
                         .negativeColor(JDApplication.COLOR_OF_DIALOG_CONTENT)
@@ -135,7 +135,7 @@ public class MainActivity extends BaseActivity {
                             @Override
                             public void onPositive(MaterialDialog dialog) {
                                 Intent intent = new Intent(
-                                        Settings.ACTION_WIRELESS_SETTINGS);
+                                        Settings.ACTION_WIFI_SETTINGS);
                                 startActivity(intent);
                             }
 
@@ -156,7 +156,7 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        unregisterReceiver(netStateReceiver);
+        unregisterReceiver(netStateReceiver); //unregister receiver
     }
 
     @Override
