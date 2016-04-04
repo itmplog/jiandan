@@ -52,20 +52,7 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    (new URL("https://baidu.com")).openConnection().getInputStream();
-
-                }catch (MalformedURLException e){
-                    e.printStackTrace();
-                }catch (IOException e){
-                    e.printStackTrace();
-                }
-            }
-        }).start();
+        
         initView();
         initData();
     }
