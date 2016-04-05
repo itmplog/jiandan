@@ -7,7 +7,7 @@
     android:layout_marginLeft="8dp"
     android:layout_marginRight="8dp"
     android:layout_marginTop="4dp"
-    app:cardCornerRadius="2dp"
+    app:cardCornerRadius="4dp"
     app:cardPreventCornerOverlap="true"
     app:cardUseCompatPadding="true">
 
@@ -38,12 +38,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
-                    android:background="#bb555555"
+                    android:background="#aa888888"
                     android:ellipsize="end"
                     android:maxLines="2"
                     android:padding="8dp"
                     android:text="我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题"
-                    android:textColor="@android:color/white"
+                    android:textColor="@color/foreground_material_dark"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -64,7 +64,7 @@
                 android:layout_marginLeft="16dp"
                 android:singleLine="true"
                 android:text="袜子@无厘头"
-                android:textColor="@color/secondary_text_default_material_light"
+                android:textColor="@color/primary_text_default_material_light"
                 android:textSize="14sp" />
 
             <TextView
@@ -88,8 +88,8 @@
                 android:padding="16dp"
                 android:singleLine="true"
                 android:text="分享"
-                android:textColor="@android:color/holo_orange_dark"
-                android:textSize="14sp" />
+                android:textColor="@android:color/holo_blue_light"
+                android:textSize="16sp" />
 
         </RelativeLayout>
     </LinearLayout>
