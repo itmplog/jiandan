@@ -5,4 +5,9 @@
                android:toYDelta="0.0"/>
     <alpha android:duration="600" android:fillAfter="true" android:fromAlpha="0"
            android:toAlpha="1"/>
+    <rotate android:duration="600" android:fillAfter="true" android:fromDegrees="0"
+        android:pivotX="50%" android:pivotY="100%"
+        android:toDegrees="360"/>
+    <scale android:duration="600" android:fillAfter="true" android:fromXScale="0.0"
+        android:toXScale="1.0" android:fromYScale="0.0" android:toYScale="1.0"/>
 </set>
