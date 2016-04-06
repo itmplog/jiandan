@@ -54,6 +54,18 @@ public class FreshNewsFragment extends BaseFragment implements LoadResultCallBac
     }
 
     @Override
+    public void onStart() {
+        super.onStart();
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        boolean isLargeMode = sp.getBoolean(SettingFragment.ENABLE_FRESH_BIG, true);
+
+        mAdapter = new FreshNewsAdapter(getActivity(), mRecyclerView, this, isLargeMode);
+        mRecyclerView.setAdapter(mAdapter);
+        mAdapter.loadFirst();
+        loading.start();
+    }
+
+    @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
@@ -76,7 +88,7 @@ public class FreshNewsFragment extends BaseFragment implements LoadResultCallBac
         });
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         mRecyclerView.setOnPauseListenerParams(false, true);
-
+/*
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getActivity());
         boolean isLargeMode = sp.getBoolean(SettingFragment.ENABLE_FRESH_BIG, true);
 
@@ -84,6 +96,7 @@ public class FreshNewsFragment extends BaseFragment implements LoadResultCallBac
         mRecyclerView.setAdapter(mAdapter);
         mAdapter.loadFirst();
         loading.start();
+        */
     }
 
     @Override
