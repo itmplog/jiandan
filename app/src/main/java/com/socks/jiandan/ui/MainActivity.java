@@ -74,8 +74,7 @@ public class MainActivity extends BaseActivity {
                 invalidateOptionsMenu();
             }
         };
-        mActionBarDrawerToggle.syncState();
-        mDrawerLayout.addDrawerListener(mActionBarDrawerToggle);
+
 
         replaceFragment(R.id.frame_container, new FreshNewsFragment());
         replaceFragment(R.id.drawer_container, new MainMenuFragment());
@@ -106,6 +105,8 @@ public class MainActivity extends BaseActivity {
     protected void onStart() {
         super.onStart();
         EventBus.getDefault().register(this);
+        mActionBarDrawerToggle.syncState();
+        mDrawerLayout.addDrawerListener(mActionBarDrawerToggle);
     }
 
     @Override
