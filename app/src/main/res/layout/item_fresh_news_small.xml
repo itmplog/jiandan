@@ -39,7 +39,7 @@
             android:layout_alignParentBottom="true"
             android:singleLine="true"
             android:text="袜子@无厘头"
-            android:textColor="@color/secondary_text_default_material_light"
+            android:textColor="@color/primary_text_default_material_light"
             android:textSize="14sp"/>
 
         <TextView
@@ -58,6 +58,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="2px"
-        android:background="#ffd9d9d9"/>
+        android:background="#ffd9d9d9"
+        android:padding="16dp"/>
 
 </LinearLayout>
