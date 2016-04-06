@@ -88,6 +88,7 @@ public class MainActivity extends BaseActivity {
             public void onReceive(Context context, Intent intent) {
                 if (intent.getAction().equals(
                         ConnectivityManager.CONNECTIVITY_ACTION)) {
+                    // if use MainActivity.this instead of getApplicationContext() will cause a memory leak
                     if (NetWorkUtil.isNetWorkConnected(MainActivity.this)) {
                         EventBus.getDefault().post(new NetWorkEvent(NetWorkEvent.AVAILABLE));
                     } else {

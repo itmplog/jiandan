@@ -20,8 +20,7 @@ public class NetWorkUtil {
 		ConnectivityManager cm = (ConnectivityManager) context
 				.getSystemService(Context.CONNECTIVITY_SERVICE);
 		NetworkInfo netInfo = cm.getActiveNetworkInfo();
-		result = netInfo != null && netInfo.isConnected();
-		return result;
+		return netInfo != null && netInfo.isConnected();
 	}
 
 
@@ -34,9 +33,9 @@ public class NetWorkUtil {
 	public static boolean isWifiConnected(Context context) {
 		ConnectivityManager connectivityManager = (ConnectivityManager) context
 				.getSystemService(Context.CONNECTIVITY_SERVICE);
-		NetworkInfo wifiNetworkInfo = connectivityManager
-				.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
-		return wifiNetworkInfo.isConnected();
+		NetworkInfo activeNetworkInfo = connectivityManager
+				.getActiveNetworkInfo();
+		return  activeNetworkInfo == null ? false : activeNetworkInfo.getType() == ConnectivityManager.TYPE_WIFI;
 	}
 
 }
