@@ -111,7 +111,7 @@ public class FreshNewsFragment extends BaseFragment implements LoadResultCallBac
             mAdapter.loadFirst();
             return true;
         }
-        return false;
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
