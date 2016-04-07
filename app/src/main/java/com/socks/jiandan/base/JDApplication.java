@@ -4,6 +4,8 @@ import android.app.Application;
 import android.content.Context;
 import android.graphics.Color;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.Volley;
 import com.facebook.stetho.Stetho;
 import com.facebook.stetho.okhttp3.StethoInterceptor;
 import com.socks.jiandan.BuildConfig;
@@ -28,6 +30,7 @@ public class JDApplication extends Application {
     private static Context mContext;
     private static DaoMaster daoMaster;
     private static DaoSession daoSession;
+    private static RequestQueue mRequestQueue;
 
     private RefWatcher refWatcher;
 
@@ -85,4 +88,10 @@ public class JDApplication extends Application {
         return daoSession;
     }
 
+    public static RequestQueue getRequestQueue(){
+        if(mRequestQueue == null){
+            mRequestQueue = Volley.newRequestQueue(mContext);
+        }
+        return mRequestQueue;
+    }
 }

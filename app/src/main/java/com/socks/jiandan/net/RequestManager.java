@@ -3,7 +3,6 @@ package com.socks.jiandan.net;
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.toolbox.Volley;
 import com.socks.jiandan.BuildConfig;
 import com.socks.jiandan.base.JDApplication;
 import com.socks.jiandan.utils.logger.Logger;
@@ -13,7 +12,8 @@ public class RequestManager {
     public static final int OUT_TIME = 10000;
     public static final int TIMES_OF_RETRY = 1;
 
-    public static RequestQueue mRequestQueue = Volley.newRequestQueue(JDApplication.getContext());
+    public static RequestQueue mRequestQueue = JDApplication.getRequestQueue();
+            //Volley.newRequestQueue(JDApplication.getContext());
 
     private RequestManager() {
     }
