@@ -35,6 +35,7 @@ public class FreshNewsFragment extends BaseFragment implements LoadResultCallBac
     RotateLoading loading;
 
     private FreshNewsAdapter mAdapter;
+    private boolean isLargeMode = true;
 
     public FreshNewsFragment() {
     }
@@ -50,19 +51,21 @@ public class FreshNewsFragment extends BaseFragment implements LoadResultCallBac
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_auto_load, container, false);
         ButterKnife.bind(this, view);
+
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        isLargeMode = sp.getBoolean(SettingFragment.ENABLE_FRESH_BIG, true);
         return view;
     }
+
 
     @Override
     public void onStart() {
         super.onStart();
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getActivity());
-        boolean isLargeMode = sp.getBoolean(SettingFragment.ENABLE_FRESH_BIG, true);
-
-        mAdapter = new FreshNewsAdapter(getActivity(), mRecyclerView, this, isLargeMode);
-        mRecyclerView.setAdapter(mAdapter);
-        mAdapter.loadFirst();
-        loading.start();
+        if(isLargeMode != sp.getBoolean(SettingFragment.ENABLE_FRESH_BIG, true)){
+            isLargeMode = !isLargeMode;
+            initRecycleView(isLargeMode);
+        }
     }
 
     @Override
@@ -88,15 +91,16 @@ public class FreshNewsFragment extends BaseFragment implements LoadResultCallBac
         });
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         mRecyclerView.setOnPauseListenerParams(false, true);
-/*
-        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getActivity());
-        boolean isLargeMode = sp.getBoolean(SettingFragment.ENABLE_FRESH_BIG, true);
 
+        initRecycleView(isLargeMode);
+
+    }
+
+    private void initRecycleView(boolean isLargeMode){
         mAdapter = new FreshNewsAdapter(getActivity(), mRecyclerView, this, isLargeMode);
         mRecyclerView.setAdapter(mAdapter);
         mAdapter.loadFirst();
         loading.start();
-        */
     }
 
     @Override

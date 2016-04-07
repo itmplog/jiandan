@@ -59,6 +59,7 @@
         android:layout_width="match_parent"
         android:layout_height="2px"
         android:background="#ffd9d9d9"
-        android:padding="16dp"/>
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"/>
 
 </LinearLayout>
