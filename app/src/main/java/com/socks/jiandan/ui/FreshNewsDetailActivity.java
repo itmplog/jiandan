@@ -1,10 +1,16 @@
 package com.socks.jiandan.ui;
 
+import android.annotation.TargetApi;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
@@ -39,7 +45,18 @@ public class FreshNewsDetailActivity extends BaseActivity {
         ButterKnife.bind(this);
         mToolbar.setTitleTextColor(Color.WHITE);
         setSupportActionBar(mToolbar);
-        mToolbar.setNavigationIcon(R.drawable.ic_actionbar_back);
+
+        final Drawable upArrow;
+        if(Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+            upArrow = ResourcesCompat.getDrawable(getResources(), R.drawable.abc_ic_ab_back_mtrl_am_alpha, getTheme());
+            // ContextCompat.getDrawable()  is ok
+        } else {
+            upArrow = getResources().getDrawable(R.drawable.abc_ic_ab_back_mtrl_am_alpha, getTheme());
+        }
+
+        // parse the UpArrow Color
+        upArrow.setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_ATOP);
+        mToolbar.setNavigationIcon(upArrow);
     }
 
     @Override
