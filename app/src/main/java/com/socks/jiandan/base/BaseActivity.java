@@ -27,7 +27,6 @@ public abstract class BaseActivity extends AppCompatActivity implements Constant
     @Override
     protected void onStart() {
         super.onStart();
-        overridePendingTransition(R.anim.popup_enter, R.anim.popup_exit);
     }
 
     @Override
