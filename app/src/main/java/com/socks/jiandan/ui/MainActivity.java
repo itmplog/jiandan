@@ -89,7 +89,7 @@ public class MainActivity extends BaseActivity {
                 if (intent.getAction().equals(
                         ConnectivityManager.CONNECTIVITY_ACTION)) {
                     // if use MainActivity.this instead of getApplicationContext() will cause a memory leak
-                    if (NetWorkUtil.isNetWorkConnected(JDApplication.getContext())) {
+                    if (NetWorkUtil.isNetWorkConnected(MainActivity.this)) {
                         EventBus.getDefault().post(new NetWorkEvent(NetWorkEvent.AVAILABLE));
                     } else {
                         EventBus.getDefault().post(new NetWorkEvent(NetWorkEvent.UNAVAILABLE));
@@ -157,8 +157,9 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void onDestroy() {
-        super.onDestroy();
+        // Need unregister Before RefWatcher
         unregisterReceiver(netStateReceiver); //unregister receiver
+        super.onDestroy();
     }
 
     @Override
