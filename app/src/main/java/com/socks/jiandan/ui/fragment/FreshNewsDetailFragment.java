@@ -2,6 +2,7 @@ package com.socks.jiandan.ui.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -35,6 +36,7 @@ public class FreshNewsDetailFragment extends BaseFragment {
 
 
     private FreshNews freshNews;
+    private static Handler handler = new Handler();
 
     public FreshNewsDetailFragment() {
     }
@@ -70,6 +72,17 @@ public class FreshNewsDetailFragment extends BaseFragment {
                 }
             }
         });
+
+        // crash a mem leak if
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                if (loading.isShown()) {
+                    loading.stop();
+                }
+            }
+        }, 10 * 1000);
+
         executeRequest(new Request4FreshNewsDetail(FreshNews.getUrlFreshNewsDetail(freshNews.getId()),
                 new Response.Listener<String>() {
                     @Override
@@ -84,15 +97,6 @@ public class FreshNewsDetailFragment extends BaseFragment {
                     }
                 }));
         loading.start();
-
-        loading.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                if (loading.isShown()) {
-                    loading.stop();
-                }
-            }
-        }, 10 * 1000);
 
     }
 
@@ -171,5 +175,12 @@ public class FreshNewsDetailFragment extends BaseFragment {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onDestroy() {
+
+        handler.removeCallbacksAndMessages(null);
+        super.onDestroy();
     }
 }
