@@ -111,7 +111,7 @@ public class PictureFragment extends BaseFragment implements LoadResultCallBack,
     public void onEventMainThread(NetWorkEvent event) {
 
         if (event.getType() == NetWorkEvent.AVAILABLE) {
-            if (NetWorkUtil.isWifiConnected(getActivity())) {
+            if (NetWorkUtil.isWifiConnected()) {
                 mAdapter.setIsWifi(true);
                 if (!isFirstChange && (System.currentTimeMillis() - lastShowTime) > 3000) {
                     ShowToast.Short("已切换为WIFI模式，自动加载GIF图片");

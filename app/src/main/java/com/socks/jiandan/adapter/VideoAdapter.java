@@ -172,7 +172,7 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
     }
 
     private void loadDataByNetworkType() {
-        if (NetWorkUtil.isNetWorkConnected(mActivity)) {
+        if (NetWorkUtil.isNetWorkConnected()) {
             loadData();
         } else {
             loadCache();

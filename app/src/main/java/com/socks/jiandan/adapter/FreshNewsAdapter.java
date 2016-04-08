@@ -149,7 +149,7 @@ public class FreshNewsAdapter extends RecyclerView.Adapter<FreshNewsAdapter.View
 
     private void loadDataByNetworkType() {
 
-        if (NetWorkUtil.isNetWorkConnected(mActivity)) {
+        if (NetWorkUtil.isNetWorkConnected()) {
             RequestManager.addRequest(new Request4FreshNews(FreshNews.getUrlFreshNews(page),
                     new Response.Listener<ArrayList<FreshNews>>() {
                         @Override

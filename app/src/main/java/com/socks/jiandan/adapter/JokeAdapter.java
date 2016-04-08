@@ -144,7 +144,7 @@ public class JokeAdapter extends RecyclerView.Adapter<JokeAdapter.JokeViewHolder
 
     private void loadDataByNetworkType() {
 
-        if (NetWorkUtil.isNetWorkConnected(mActivity)) {
+        if (NetWorkUtil.isNetWorkConnected()) {
             loadData();
         } else {
             loadCache();

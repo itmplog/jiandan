@@ -68,7 +68,7 @@ public class PictureAdapter extends RecyclerView.Adapter<PictureAdapter.PictureV
         mLoadFinisCallBack = loadFinisCallBack;
         mLoadResultCallBack = loadResultCallBack;
         pictures = new ArrayList<>();
-        isWifiConnected = NetWorkUtil.isWifiConnected(mActivity);
+        isWifiConnected = NetWorkUtil.isWifiConnected();
     }
 
     private void setAnimation(View viewToAnimate, int position) {
@@ -232,7 +232,7 @@ public class PictureAdapter extends RecyclerView.Adapter<PictureAdapter.PictureV
 
     private void loadDataByNetworkType() {
 
-        if (NetWorkUtil.isNetWorkConnected(mActivity)) {
+        if (NetWorkUtil.isNetWorkConnected()) {
             loadData();
         } else {
             loadCache();
