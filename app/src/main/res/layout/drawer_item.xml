@@ -23,4 +23,10 @@
         android:textColor="#ffffffff"
         android:textSize="15sp"/>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_alignLeft="@+id/tv_title"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/widget_bottom_shadow"/>
 </RelativeLayout>

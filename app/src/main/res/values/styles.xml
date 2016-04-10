@@ -28,7 +28,7 @@
 
     <style name="AppTheme.JDDrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
         <!--是否开启导航图标的旋转效果-->
-        <item name="spinBars">false</item>
+        <item name="spinBars">true</item>
         <item name="color">@android:color/white</item>
     </style>
 
