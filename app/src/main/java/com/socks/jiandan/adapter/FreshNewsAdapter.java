@@ -2,6 +2,8 @@ package com.socks.jiandan.adapter;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -40,7 +42,7 @@ import butterknife.ButterKnife;
 public class FreshNewsAdapter extends RecyclerView.Adapter<FreshNewsAdapter.ViewHolder> {
 
     private int page;
-    private int lastPosition = -1;
+    private int lastPosition;
     private boolean isLargeMode;
     private Activity mActivity;
     private DisplayImageOptions options;
@@ -57,6 +59,9 @@ public class FreshNewsAdapter extends RecyclerView.Adapter<FreshNewsAdapter.View
 
         int loadingResource = isLargeMode ? R.drawable.ic_loading_large : R.drawable.ic_loading_small;
         options = ImageLoadProxy.getOptions4PictureList(loadingResource);
+
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(activity);
+        lastPosition = sp.getInt("lastPosition", -1);
     }
 
     private void setAnimation(View viewToAnimate, int position) {
@@ -216,6 +221,11 @@ public class FreshNewsAdapter extends RecyclerView.Adapter<FreshNewsAdapter.View
             super(contentView);
             ButterKnife.bind(this, contentView);
         }
+    }
+
+    public void setLastPosition(){
+        PreferenceManager.getDefaultSharedPreferences(mActivity).edit().putInt("lastPosition", lastPosition)
+                .commit();
     }
 
 }

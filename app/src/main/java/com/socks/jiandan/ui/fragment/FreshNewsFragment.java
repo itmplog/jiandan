@@ -119,6 +119,12 @@ public class FreshNewsFragment extends BaseFragment implements LoadResultCallBac
     }
 
     @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        mAdapter.setLastPosition();
+    }
+
+    @Override
     public void onSuccess(int result, Object object) {
         loading.stop();
         if (mSwipeRefreshLayout.isRefreshing()) {
