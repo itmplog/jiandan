@@ -15,6 +15,9 @@ import com.socks.jiandan.utils.StrictModeUtil;
 import com.socks.jiandan.utils.logger.LogLevel;
 import com.socks.jiandan.utils.logger.Logger;
 import com.socks.jiandan.view.imageloader.ImageLoadProxy;
+import com.squareup.leakcanary.AndroidExcludedRefs;
+import com.squareup.leakcanary.DisplayLeakService;
+import com.squareup.leakcanary.ExcludedRefs;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
 
@@ -38,7 +41,12 @@ public class JDApplication extends Application {
     public void onCreate() {
         StrictModeUtil.init(); //StrictMode 线程监控， VM监控
         super.onCreate();
-        refWatcher = LeakCanary.install(this); // init LeakCanary
+
+        ExcludedRefs excludedRefs = AndroidExcludedRefs.createAppDefaults()
+                .instanceField("com.socks.jiandan.view.AutoLoadRecyclerView", "mContext")
+                .reason("recyclerView leak")
+                .build();
+        refWatcher = LeakCanary.install(this, DisplayLeakService.class, excludedRefs); // init LeakCanary
         mContext = this;
         ImageLoadProxy.initImageLoader(this); //universalImageLoader init
 

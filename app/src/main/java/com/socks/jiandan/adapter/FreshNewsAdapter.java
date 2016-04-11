@@ -32,6 +32,7 @@ import com.socks.jiandan.ui.FreshNewsDetailActivity;
 import com.socks.jiandan.utils.NetWorkUtil;
 import com.socks.jiandan.utils.ShareUtil;
 import com.socks.jiandan.utils.ShowToast;
+import com.socks.jiandan.utils.String2TimeUtil;
 import com.socks.jiandan.view.imageloader.ImageLoadProxy;
 
 import java.util.ArrayList;
@@ -101,7 +102,9 @@ public class FreshNewsAdapter extends RecyclerView.Adapter<FreshNewsAdapter.View
         holder.tv_info.setText(freshNews.getAuthor().getName() + "@" + freshNews.getTags()
                 .getTitle());
         //holder.tv_views.setText("浏览" + freshNews.getCustomFields().getViews() + "次");
-        holder.tv_views.setText(freshNews.getComment_count() + "个评论");
+        holder.tv_views.setText(freshNews.getComment_count() + "评论");
+        holder.tv_date.setText(String2TimeUtil
+                .dateString2GoodExperienceFormat(freshNews.getDate()));
 
         if (isLargeMode) {
             holder.tv_share.setOnClickListener(new View.OnClickListener() {
@@ -205,6 +208,8 @@ public class FreshNewsAdapter extends RecyclerView.Adapter<FreshNewsAdapter.View
         TextView tv_info;
         @Bind(R.id.tv_views)
         TextView tv_views;
+        @Bind(R.id.tv_date)
+        TextView tv_date;
         @Nullable
         @Bind(R.id.tv_share)
         TextView tv_share;

@@ -30,11 +30,11 @@ public class String2TimeUtil {
 				} else {
 					long n2 = distanceTime / 60000L;
 					new SimpleDateFormat("HH:mm");
-					SimpleDateFormat simpleDateFormat2 = new SimpleDateFormat("MM-dd");
+					SimpleDateFormat simpleDateFormat2 = new SimpleDateFormat("MM-dd HH:mm");
 					if (n2 < 60L) {
-						timeString = String.valueOf(n2) + " mins ago";
+						timeString = String.valueOf(n2) + "mins ago";
 					} else if (n2 < 720L) {
-						timeString = String.valueOf(n2 / 60L) + " hours ago";
+						timeString = String.valueOf(n2 / 60L) + "hours ago";
 					} else {
 						timeString = simpleDateFormat2.format(parse);
 					}
