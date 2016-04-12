@@ -42,11 +42,11 @@ public class JDApplication extends Application {
         StrictModeUtil.init(); //StrictMode 线程监控， VM监控
         super.onCreate();
 
-        ExcludedRefs excludedRefs = AndroidExcludedRefs.createAppDefaults()
+        /*ExcludedRefs excludedRefs = AndroidExcludedRefs.createAppDefaults()
                 .instanceField("com.socks.jiandan.view.AutoLoadRecyclerView", "mContext")
                 .reason("recyclerView leak")
-                .build();
-        refWatcher = LeakCanary.install(this, DisplayLeakService.class, excludedRefs); // init LeakCanary
+                .build();*/
+        refWatcher = LeakCanary.install(this); //, DisplayLeakService.class, excludedRefs); // init LeakCanary
         mContext = this;
         ImageLoadProxy.initImageLoader(this); //universalImageLoader init
 
