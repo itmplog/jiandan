@@ -9,7 +9,7 @@
 
     <fragment
         android:id="@+id/fragment_setting"
-        class="com.socks.jiandan.ui.fragment.SettingFragment"
+        class="top.itmp.jiandan.ui.fragment.SettingFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

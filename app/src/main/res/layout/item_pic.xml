@@ -75,7 +75,7 @@
                 android:progressDrawable="@drawable/progress_horizontal_holo_dark"
                 android:visibility="gone" />
 
-            <com.socks.jiandan.view.ShowMaxImageView
+            <top.itmp.jiandan.view.ShowMaxImageView
                 android:id="@+id/img"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

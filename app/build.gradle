@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.3"
 
     defaultConfig {
-        applicationId "com.socks.jiandan"
+        applicationId "top.itmp.jiandan"
         minSdkVersion 14
         targetSdkVersion 23
         versionCode 2

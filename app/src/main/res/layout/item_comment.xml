@@ -54,7 +54,7 @@
             android:textSize="13.0sp"
             android:visibility="visible" />
 
-        <com.socks.jiandan.view.floorview.FloorView
+        <top.itmp.jiandan.view.floorview.FloorView
             android:id="@+id/floors_parent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

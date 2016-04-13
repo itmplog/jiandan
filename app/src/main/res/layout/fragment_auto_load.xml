@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.socks.jiandan.view.AutoLoadRecyclerView
+        <top.itmp.jiandan.view.AutoLoadRecyclerView
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
