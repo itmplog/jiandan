@@ -42,11 +42,15 @@ public class JDApplication extends Application {
         StrictModeUtil.init(); //StrictMode 线程监控， VM监控
         super.onCreate();
 
-        /*ExcludedRefs excludedRefs = AndroidExcludedRefs.createAppDefaults()
-                .instanceField("com.socks.jiandan.view.AutoLoadRecyclerView", "mContext")
+        ExcludedRefs excludedRefs = AndroidExcludedRefs.createAppDefaults()
+                //.instanceField("android.support.v7.widget.RecyclerView", "mContext")
+                // inv
+                .staticField("android.view.inputmethod.InputMethodManager", "sInstance")
+                .instanceField("android.support.v7.widget.RecyclerView", "mContext")
+                .instanceField("top.itmp.uidemo.ui.MainActivity", "instance")
                 .reason("recyclerView leak")
-                .build();*/
-        refWatcher = LeakCanary.install(this); //, DisplayLeakService.class, excludedRefs); // init LeakCanary
+                .build();
+        refWatcher = LeakCanary.install(this, DisplayLeakService.class, excludedRefs); // init LeakCanary
         mContext = this;
         ImageLoadProxy.initImageLoader(this); //universalImageLoader init
 
@@ -78,18 +82,18 @@ public class JDApplication extends Application {
     }
 
 
-    public static DaoMaster getDaoMaster(Context context) {
+    public static DaoMaster getDaoMaster() {
         if (daoMaster == null) {
-            DaoMaster.OpenHelper helper = new DaoMaster.DevOpenHelper(context, BaseCache.DB_NAME, null);
+            DaoMaster.OpenHelper helper = new DaoMaster.DevOpenHelper(mContext, BaseCache.DB_NAME, null);
             daoMaster = new DaoMaster(helper.getWritableDatabase());
         }
         return daoMaster;
     }
 
-    public static DaoSession getDaoSession(Context context) {
+    public static DaoSession getDaoSession() {
         if (daoSession == null) {
             if (daoMaster == null) {
-                daoMaster = getDaoMaster(context);
+                daoMaster = getDaoMaster();
             }
             daoSession = daoMaster.newSession();
         }

@@ -76,7 +76,7 @@ public class FreshNewsAdapter extends RecyclerView.Adapter<FreshNewsAdapter.View
 
     @Override
     public void onViewDetachedFromWindow(ViewHolder holder) {
-
+        super.onViewDetachedFromWindow(holder);
         if (isLargeMode) {
             holder.card.clearAnimation();
         } else {
@@ -169,13 +169,13 @@ public class FreshNewsAdapter extends RecyclerView.Adapter<FreshNewsAdapter.View
 
                             if (page == 1) {
                                 mFreshNews.clear();
-                                FreshNewsCache.getInstance(mActivity).clearAllCache();
+                                FreshNewsCache.getInstance().clearAllCache();
                             }
 
                             mFreshNews.addAll(response);
                             notifyDataSetChanged();
 
-                            FreshNewsCache.getInstance(mActivity).addResultCache(JSONParser.toString(response),
+                            FreshNewsCache.getInstance().addResultCache(JSONParser.toString(response),
                                     page);
                         }
                     }, new Response.ErrorListener() {
@@ -194,7 +194,7 @@ public class FreshNewsAdapter extends RecyclerView.Adapter<FreshNewsAdapter.View
                 ShowToast.Short(ConstantString.LOAD_NO_NETWORK);
             }
 
-            mFreshNews.addAll(FreshNewsCache.getInstance(mActivity).getCacheByPage(page));
+            mFreshNews.addAll(FreshNewsCache.getInstance().getCacheByPage(page));
             notifyDataSetChanged();
         }
 

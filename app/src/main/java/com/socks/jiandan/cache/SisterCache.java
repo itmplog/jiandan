@@ -30,7 +30,7 @@ public class SisterCache extends BaseCache {
 				}
 			}
 
-			mDaoSession = JDApplication.getDaoSession(context);
+			mDaoSession = JDApplication.getDaoSession();
 			mPictureCacheDao = mDaoSession.getSisterCacheDao();
 		}
 		return instance;

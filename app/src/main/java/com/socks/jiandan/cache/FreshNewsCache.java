@@ -20,7 +20,7 @@ public class FreshNewsCache extends BaseCache {
     private FreshNewsCache() {
     }
 
-    public static FreshNewsCache getInstance(Context context) {
+    public static FreshNewsCache getInstance() {
 
         if (instance == null) {
 
@@ -30,7 +30,7 @@ public class FreshNewsCache extends BaseCache {
                 }
             }
 
-            mDaoSession = JDApplication.getDaoSession(context);
+            mDaoSession = JDApplication.getDaoSession();
             mFreshNewsCacheDao = mDaoSession.getFreshNewsCacheDao();
         }
         return instance;

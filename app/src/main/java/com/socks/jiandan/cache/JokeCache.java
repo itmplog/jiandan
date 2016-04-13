@@ -31,7 +31,7 @@ public class JokeCache extends BaseCache {
                 }
             }
 
-            mDaoSession = JDApplication.getDaoSession(context);
+            mDaoSession = JDApplication.getDaoSession();
             mJokeCacheDao = mDaoSession.getJokeCacheDao();
         }
         return instance;

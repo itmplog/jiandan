@@ -33,7 +33,7 @@ public class PictureCache extends BaseCache {
 				}
 			}
 
-			mDaoSession = JDApplication.getDaoSession(context);
+			mDaoSession = JDApplication.getDaoSession();
 			mPictureCacheDao = mDaoSession.getPictureCacheDao();
 		}
 		return instance;

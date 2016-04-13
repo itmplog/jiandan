@@ -30,7 +30,7 @@ public class VideoCache extends BaseCache {
                 }
             }
 
-            mDaoSession = JDApplication.getDaoSession(context);
+            mDaoSession = JDApplication.getDaoSession();
             mVideoCacheDao = mDaoSession.getVideoCacheDao();
         }
         return instance;

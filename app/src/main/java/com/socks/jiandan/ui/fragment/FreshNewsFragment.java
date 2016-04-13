@@ -122,6 +122,9 @@ public class FreshNewsFragment extends BaseFragment implements LoadResultCallBac
     public void onDestroyView() {
         super.onDestroyView();
         mAdapter.setLastPosition();
+        mRecyclerView.removeAllViews();
+        mRecyclerView.setLoadMoreListener(null);
+        mRecyclerView.setAdapter(null);
     }
 
     @Override
