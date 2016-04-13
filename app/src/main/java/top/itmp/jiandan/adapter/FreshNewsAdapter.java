@@ -170,6 +170,7 @@ public class FreshNewsAdapter extends RecyclerView.Adapter<FreshNewsAdapter.View
                             if (page == 1) {
                                 mFreshNews.clear();
                                 FreshNewsCache.getInstance().clearAllCache();
+                                lastPosition = -1;
                             }
 
                             mFreshNews.addAll(response);
