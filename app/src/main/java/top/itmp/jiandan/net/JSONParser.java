@@ -7,9 +7,12 @@ import java.lang.reflect.Type;
 
 public class JSONParser {
 
-    protected static Gson gson = new Gson();
+    protected static Gson gson;
 
     public static String toString(Object obj) {
+        if(gson == null){
+            gson = new Gson();
+        }
         return gson.toJson(obj);
     }
 
@@ -20,6 +23,10 @@ public class JSONParser {
      * @Description: 将标准JSON字符串反序列化为对象
      */
     public static Object toObject(String jsonString, Object type) {
+        if(gson == null){
+            gson = new Gson();
+        }
+
         jsonString = jsonString.replace("&nbsp", "");
         jsonString = jsonString.replace("﹠nbsp", "");
         jsonString = jsonString.replace("nbsp", "");
