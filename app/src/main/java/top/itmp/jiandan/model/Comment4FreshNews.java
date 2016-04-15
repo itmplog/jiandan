@@ -23,6 +23,8 @@ public class Comment4FreshNews extends Commentator implements Comparable, Commen
     private int parentId;
     private ArrayList<Comment4FreshNews> parentComments;
     private int vote_positive;
+    private int vote_negative;
+    private int index;
 
     public Comment4FreshNews() {
     }
@@ -83,6 +85,18 @@ public class Comment4FreshNews extends Commentator implements Comparable, Commen
         return vote_positive;
     }
 
+    public void setVote_positive(int vote){
+        vote_positive = vote;
+    }
+
+    public int getVote_negative() {
+        return vote_negative;
+    }
+
+    public void setVote_negative(int vote){
+        vote_negative = vote;
+    }
+
     public ArrayList<Comment4FreshNews> getParentComments() {
         return parentComments;
     }
@@ -97,6 +111,14 @@ public class Comment4FreshNews extends Commentator implements Comparable, Commen
 
     public void setParentId(int parentId) {
         this.parentId = parentId;
+    }
+
+    public int getIndex(int index){
+        return index;
+    }
+
+    public void setIndex(int index){
+        this.index = index;
     }
 
     @Override

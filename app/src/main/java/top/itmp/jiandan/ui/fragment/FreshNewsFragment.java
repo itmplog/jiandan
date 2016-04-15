@@ -74,11 +74,11 @@ public class FreshNewsFragment extends BaseFragment implements LoadResultCallBac
 
         mRecyclerView.setHasFixedSize(false);
         mRecyclerView.setLoadMoreListener(new LoadMoreListener() {
-            @Override
-            public void loadMore() {
-                mAdapter.loadNextPage();
-            }
-        });
+                    @Override
+                    public void loadMore() {
+                        mAdapter.loadNextPage();
+                    }
+                });
         mSwipeRefreshLayout.setColorSchemeResources(android.R.color.holo_orange_light,
                 android.R.color.holo_green_light,
                 android.R.color.holo_orange_light,

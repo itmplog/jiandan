@@ -1,6 +1,5 @@
 package top.itmp.jiandan.cache;
 
-import android.content.Context;
 import top.itmp.jiandan.base.JDApplication;
 import top.itmp.jiandan.model.FreshNews;
 

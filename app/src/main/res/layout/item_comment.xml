@@ -54,6 +54,25 @@
             android:textSize="13.0sp"
             android:visibility="visible" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OO 0"
+            android:layout_marginRight="8.0dp"
+            android:layout_toLeftOf="@+id/xx"
+            android:layout_alignBaseline="@+id/tv_name"
+            android:textSize="14sp"
+            android:id="@+id/oo"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="XX 0"
+            android:layout_marginRight="8.0dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignBaseline="@+id/tv_name"
+            android:textSize="14sp"
+            android:id="@+id/xx"/>
+
         <top.itmp.jiandan.view.floorview.FloorView
             android:id="@+id/floors_parent"
             android:layout_width="match_parent"

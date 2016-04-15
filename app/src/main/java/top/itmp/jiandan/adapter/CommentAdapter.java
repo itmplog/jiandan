@@ -5,6 +5,7 @@ import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+
 import top.itmp.jiandan.R;
 import top.itmp.jiandan.base.ConstantString;
 import top.itmp.jiandan.base.JDApplication;
@@ -105,6 +107,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentV
             case Commentator.TYPE_NORMAL:
                 final Commentator comment = commentator;
                 holder.tv_name.setText(commentator.getName());
+
                 holder.tv_content.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -145,6 +148,18 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentV
                     Comment4FreshNews commentators4FreshNews = (Comment4FreshNews) commentator;
                     holder.tv_content.setText(commentators4FreshNews.getCommentContent());
                     ImageLoadProxy.displayHeadIcon(commentators4FreshNews.getAvatar_url(), holder.img_header);
+
+                    holder.tv_time.setText(String2TimeUtil
+                            .dateString2GoodExperienceFormat(commentators4FreshNews.getDate()));
+                    if(commentators4FreshNews.getVote_positive() > 0){
+                        holder.oo.setTextColor(Color.RED);
+                        holder.oo.setText("OO " + commentators4FreshNews.getVote_positive());
+                    }
+                    if(commentators4FreshNews.getVote_negative() > 0){
+                        holder.xx.setTextColor(Color.BLUE);
+                        holder.xx.setText("XX " + commentators4FreshNews.getVote_negative());
+                    }
+
                 } else {
                     String timeString = commentator.getCreated_at().replace("T", " ");
                     timeString = timeString.substring(0, timeString.indexOf("+"));
@@ -294,6 +309,8 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentV
                             public int compare(Comment4FreshNews lhs, Comment4FreshNews rhs) {
                                 return lhs.getVote_positive() <= rhs.getVote_positive() ? 1 :
                                         -1;
+                                //return lhs.getVote_positive() == rhs.getVote_positive() ? -1 : lhs.getVote_positive()
+                                      //  - rhs.getVote_positive();
                             }
                         });
 
@@ -358,6 +375,12 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentV
         @Nullable
         @Bind(R.id.floors_parent)
         FloorView floors_parent;
+        @Nullable
+        @Bind(R.id.xx)
+        TextView xx;
+        @Nullable
+        @Bind(R.id.oo)
+        TextView oo;
 
         public CommentViewHolder(View itemView) {
             super(itemView);
