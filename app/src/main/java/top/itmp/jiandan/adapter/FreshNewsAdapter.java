@@ -107,6 +107,7 @@ public class FreshNewsAdapter extends RecyclerView.Adapter<FreshNewsAdapter.View
                 .dateString2GoodExperienceFormat(freshNews.getDate()));
 
         if (isLargeMode) {
+
             holder.tv_share.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
