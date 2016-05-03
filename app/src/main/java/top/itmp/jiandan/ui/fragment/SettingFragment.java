@@ -88,28 +88,21 @@ public class SettingFragment extends PreferenceFragment implements Preference.On
                     .negativeColor(JDApplication.COLOR_OF_DIALOG_CONTENT)
                     .neutralColor(JDApplication.COLOR_OF_DIALOG_CONTENT)
                     .titleColor(JDApplication.COLOR_OF_DIALOG_CONTENT)
-                    .content("我是凯子哥，热爱分享，欢迎star ^_^")
+                    .content("....")
                     .positiveText("GitHub")
                     .negativeText("WeiBo")
-                    .neutralText("CSDN")
                     .callback(new MaterialDialog.ButtonCallback() {
                         @Override
                         public void onPositive(MaterialDialog dialog) {
                             super.onPositive(dialog);
-                            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/ZhaoKaiQiang/JianDan")));
+                            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/itmplog/JianDan")));
                             dialog.dismiss();
                         }
 
                         @Override
                         public void onNegative(MaterialDialog dialog) {
                             super.onNegative(dialog);
-                            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://weibo.com/zhaokaiqiang1992")));
-                        }
-
-                        @Override
-                        public void onNeutral(MaterialDialog dialog) {
-                            super.onNeutral(dialog);
-                            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://blog.csdn.net/zhaokaiqiang1992")));
+                            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://weibo.com/huaixiaoz")));
                         }
                     })
                     .build();
