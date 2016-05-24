@@ -1,5 +1,7 @@
 # JianDan客户端高仿版
 
+[![Build Status](https://travis-ci.org/nullog/jiandan.svg?branch=master)](https://travis-ci.org/nullog/jiandan)
+
 ---
 
 ##效果图
