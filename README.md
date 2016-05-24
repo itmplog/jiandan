@@ -51,19 +51,16 @@
 - 由于小视频接口有问题，当加载成功的数据少于10条时，会自动加载下一页，直到大于10条为止
 - 添加新鲜事大图模式切换功能
 
-##关于我
-
-- [Android研发工程师](http://weibo.com/zhaokaiqiang1992)
-- [CSDN博客专家](http://blog.csdn.net/zhaokaiqiang1992)
 
 ##使用到的开源框架
 
-- [Volley](https://android.googlesource.com/platform/frameworks/volley)
-- [Universal Image Load](https://github.com/nostra13/Android-Universal-Image-Loader)
-- [butter knife](https://github.com/JakeWharton/butterknife)
+- [Material Dialogs](https://github.com/afollestad/material-dialogs)
 - [EventBus](https://github.com/greenrobot/EventBus)
-- [material-dialogs](https://github.com/afollestad/material-dialogs)
+- [GreenDao](http://greendao-orm.com/) [Github](https://github.com/greenrobot/GreenDao)
 - [gson](https://code.google.com/p/google-gson/)
-- [GreenDao](http://greendao-orm.com/)
+- [butter knife](https://github.com/JakeWharton/butterknife)
+- [Photo View](https://github.com/chrisbanes/PhotoView)
+- [Universal Image Load](https://github.com/nostra13/Android-Universal-Image-Loader)
 - [Loading](https://github.com/yankai-victor/Loading)
+- [Volley](https://android.googlesource.com/platform/frameworks/volley)
 - [LeakCanary](https://github.com/square/leakcanary)
