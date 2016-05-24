@@ -22,21 +22,21 @@ import top.itmp.jiandan.utils.ShareUtil;
 import top.itmp.jiandan.utils.TextUtil;
 
 import butterknife.ButterKnife;
-import butterknife.Bind;
+import butterknife.BindView;
 
 public class VideoDetailActivity extends BaseActivity implements View.OnClickListener {
 
-    @Bind(R.id.webview)
+    @BindView(R.id.webview)
     WebView webview;
-    @Bind(R.id.progress)
+    @BindView(R.id.progress)
     ProgressBar progress;
-    @Bind(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar mToolbar;
-    @Bind(R.id.imgBtn_back)
+    @BindView(R.id.imgBtn_back)
     ImageButton imgBtn_back;
-    @Bind(R.id.imgBtn_forward)
+    @BindView(R.id.imgBtn_forward)
     ImageButton imgBtn_forward;
-    @Bind(R.id.imgBtn_control)
+    @BindView(R.id.imgBtn_control)
     ImageButton imgBtn_control;
 
     private String url;

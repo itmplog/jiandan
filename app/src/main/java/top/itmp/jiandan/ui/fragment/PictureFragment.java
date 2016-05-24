@@ -32,15 +32,15 @@ import org.greenrobot.eventbus.Subscribe;
 import java.io.File;
 
 import butterknife.ButterKnife;
-import butterknife.Bind;
+import butterknife.BindView;
 
 public class PictureFragment extends BaseFragment implements LoadResultCallBack, LoadFinishCallBack {
 
-    @Bind(R.id.recycler_view)
+    @BindView(R.id.recycler_view)
     AutoLoadRecyclerView mRecyclerView;
-    @Bind(R.id.swipeRefreshLayout)
+    @BindView(R.id.swipeRefreshLayout)
     SwipeRefreshLayout mSwipeRefreshLayout;
-    @Bind(R.id.loading)
+    @BindView(R.id.loading)
     RotateLoading loading;
 
     private PictureAdapter mAdapter;

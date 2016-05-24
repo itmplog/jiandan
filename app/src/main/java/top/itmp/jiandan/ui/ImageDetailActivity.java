@@ -32,22 +32,22 @@ import top.itmp.jiandan.view.imageloader.ImageLoadProxy;
 import java.io.File;
 
 import butterknife.ButterKnife;
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 import uk.co.senab.photoview.PhotoView;
 import uk.co.senab.photoview.PhotoViewAttacher;
 
 public class ImageDetailActivity extends BaseActivity implements View.OnClickListener, LoadFinishCallBack {
 
-    @Bind(R.id.web_gif)
+    @BindView(R.id.web_gif)
     WebView webView;
-    @Bind(R.id.img)
+    @BindView(R.id.img)
     PhotoView img;
-    @Bind(R.id.progress)
+    @BindView(R.id.progress)
     ProgressBar progress;
-    @Bind(R.id.ll_bottom_bar)
+    @BindView(R.id.ll_bottom_bar)
     LinearLayout ll_bottom_bar;
-    @Bind(R.id.rl_top_bar)
+    @BindView(R.id.rl_top_bar)
     RelativeLayout rl_top_bar;
 
     public static final int ANIMATION_DURATION = 400;

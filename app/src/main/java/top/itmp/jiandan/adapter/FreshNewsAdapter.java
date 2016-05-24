@@ -37,7 +37,7 @@ import top.itmp.jiandan.view.imageloader.ImageLoadProxy;
 
 import java.util.ArrayList;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class FreshNewsAdapter extends RecyclerView.Adapter<FreshNewsAdapter.ViewHolder> {
@@ -204,24 +204,24 @@ public class FreshNewsAdapter extends RecyclerView.Adapter<FreshNewsAdapter.View
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
-        @Bind(R.id.tv_title)
+        @BindView(R.id.tv_title)
         TextView tv_title;
-        @Bind(R.id.tv_info)
+        @BindView(R.id.tv_info)
         TextView tv_info;
-        @Bind(R.id.tv_views)
+        @BindView(R.id.tv_views)
         TextView tv_views;
-        @Bind(R.id.tv_date)
+        @BindView(R.id.tv_date)
         TextView tv_date;
         @Nullable
-        @Bind(R.id.tv_share)
+        @BindView(R.id.tv_share)
         TextView tv_share;
-        @Bind(R.id.img)
+        @BindView(R.id.img)
         ImageView img;
         @Nullable
-        @Bind(R.id.card)
+        @BindView(R.id.card)
         CardView card;
         @Nullable
-        @Bind(R.id.ll_content)
+        @BindView(R.id.ll_content)
         LinearLayout ll_content;
 
         public ViewHolder(View contentView) {

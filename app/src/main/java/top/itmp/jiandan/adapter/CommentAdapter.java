@@ -17,6 +17,7 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 
+import butterknife.BindView;
 import top.itmp.jiandan.R;
 import top.itmp.jiandan.base.ConstantString;
 import top.itmp.jiandan.base.JDApplication;
@@ -41,7 +42,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import butterknife.Bind;
 import butterknife.ButterKnife;
 
 
@@ -358,28 +358,28 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentV
     static class CommentViewHolder extends RecyclerView.ViewHolder {
 
         @Nullable
-        @Bind(R.id.tv_name)
+        @BindView(R.id.tv_name)
         TextView tv_name;
         @Nullable
-        @Bind(R.id.tv_content)
+        @BindView(R.id.tv_content)
         TextView tv_content;
         @Nullable
-        @Bind(R.id.tv_flag)
+        @BindView(R.id.tv_flag)
         TextView tv_flag;
         @Nullable
-        @Bind(R.id.tv_time)
+        @BindView(R.id.tv_time)
         TextView tv_time;
         @Nullable
-        @Bind(R.id.img_header)
+        @BindView(R.id.img_header)
         ImageView img_header;
         @Nullable
-        @Bind(R.id.floors_parent)
+        @BindView(R.id.floors_parent)
         FloorView floors_parent;
         @Nullable
-        @Bind(R.id.xx)
+        @BindView(R.id.xx)
         TextView xx;
         @Nullable
-        @Bind(R.id.oo)
+        @BindView(R.id.oo)
         TextView oo;
 
         public CommentViewHolder(View itemView) {

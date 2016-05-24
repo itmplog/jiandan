@@ -25,13 +25,13 @@ import top.itmp.jiandan.ui.SettingActivity;
 import java.util.ArrayList;
 
 import butterknife.ButterKnife;
-import butterknife.Bind;
+import butterknife.BindView;
 
 public class MainMenuFragment extends BaseFragment {
 
-    @Bind(R.id.recycler_view)
+    @BindView(R.id.recycler_view)
     RecyclerView mRecyclerView;
-    @Bind(R.id.rl_container)
+    @BindView(R.id.rl_container)
     RelativeLayout rl_container;
 
     private LinearLayoutManager mLayoutManager;

@@ -24,13 +24,13 @@ import top.itmp.jiandan.utils.String2TimeUtil;
 import com.victor.loading.rotate.RotateLoading;
 
 import butterknife.ButterKnife;
-import butterknife.Bind;
+import butterknife.BindView;
 
 public class FreshNewsDetailFragment extends BaseFragment {
 
-    @Bind(R.id.webView)
+    @BindView(R.id.webView)
     WebView webView;
-    @Bind(R.id.loading)
+    @BindView(R.id.loading)
     RotateLoading loading;
 
 

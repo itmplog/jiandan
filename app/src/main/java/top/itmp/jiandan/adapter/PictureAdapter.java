@@ -47,7 +47,7 @@ import top.itmp.jiandan.view.imageloader.ImageLoadProxy;
 
 import java.util.ArrayList;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class PictureAdapter extends RecyclerView.Adapter<PictureAdapter.PictureViewHolder> {
@@ -322,35 +322,35 @@ public class PictureAdapter extends RecyclerView.Adapter<PictureAdapter.PictureV
 
     public static class PictureViewHolder extends RecyclerView.ViewHolder {
 
-        @Bind(R.id.tv_author)
+        @BindView(R.id.tv_author)
         TextView tv_author;
-        @Bind(R.id.tv_time)
+        @BindView(R.id.tv_time)
         TextView tv_time;
-        @Bind(R.id.tv_content)
+        @BindView(R.id.tv_content)
         TextView tv_content;
-        @Bind(R.id.tv_like)
+        @BindView(R.id.tv_like)
         TextView tv_like;
-        @Bind(R.id.tv_unlike)
+        @BindView(R.id.tv_unlike)
         TextView tv_unlike;
-        @Bind(R.id.tv_comment_count)
+        @BindView(R.id.tv_comment_count)
         TextView tv_comment_count;
-        @Bind(R.id.tv_unsupport_des)
+        @BindView(R.id.tv_unsupport_des)
         TextView tv_un_support_des;
-        @Bind(R.id.tv_support_des)
+        @BindView(R.id.tv_support_des)
         TextView tv_support_des;
 
-        @Bind(R.id.img_share)
+        @BindView(R.id.img_share)
         ImageView img_share;
-        @Bind(R.id.img_gif)
+        @BindView(R.id.img_gif)
         ImageView img_gif;
-        @Bind(R.id.img)
+        @BindView(R.id.img)
         ShowMaxImageView img;
 
-        @Bind(R.id.ll_comment)
+        @BindView(R.id.ll_comment)
         LinearLayout ll_comment;
-        @Bind(R.id.progress)
+        @BindView(R.id.progress)
         ProgressBar progress;
-        @Bind(R.id.card)
+        @BindView(R.id.card)
         CardView card;
 
         public PictureViewHolder(View contentView) {

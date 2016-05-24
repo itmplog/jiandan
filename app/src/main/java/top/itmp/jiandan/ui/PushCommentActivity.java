@@ -30,15 +30,15 @@ import top.itmp.jiandan.utils.TextUtil;
 import java.util.HashMap;
 
 import butterknife.ButterKnife;
-import butterknife.Bind;
+import butterknife.BindView;
 
 public class PushCommentActivity extends BaseActivity {
 
-    @Bind(R.id.tv_title)
+    @BindView(R.id.tv_title)
     TextView tv_title;
-    @Bind(R.id.et_content)
+    @BindView(R.id.et_content)
     EditText et_content;
-    @Bind(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar mToolbar;
 
     private String thread_id;

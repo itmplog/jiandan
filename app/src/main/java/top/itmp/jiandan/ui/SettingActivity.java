@@ -9,11 +9,11 @@ import top.itmp.jiandan.R;
 import top.itmp.jiandan.base.BaseActivity;
 
 import butterknife.ButterKnife;
-    import butterknife.Bind;
+    import butterknife.BindView;
 
 public class SettingActivity extends BaseActivity {
 
-    @Bind(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar mToolbar;
 
     @Override

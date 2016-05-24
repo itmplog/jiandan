@@ -21,13 +21,13 @@ import top.itmp.jiandan.ui.fragment.FreshNewsDetailFragment;
 import java.util.ArrayList;
 
 import butterknife.ButterKnife;
-import butterknife.Bind;
+import butterknife.BindView;
 
 public class FreshNewsDetailActivity extends BaseActivity {
 
-    @Bind(R.id.vp)
+    @BindView(R.id.vp)
     ViewPager viewPager;
-    @Bind(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar mToolbar;
 
     @Override

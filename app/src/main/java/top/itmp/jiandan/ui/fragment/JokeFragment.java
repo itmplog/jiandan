@@ -20,15 +20,15 @@ import top.itmp.jiandan.view.AutoLoadRecyclerView;
 import com.victor.loading.rotate.RotateLoading;
 
 import butterknife.ButterKnife;
-import butterknife.Bind;
+import butterknife.BindView;
 
 public class JokeFragment extends BaseFragment implements LoadResultCallBack {
 
-    @Bind(R.id.recycler_view)
+    @BindView(R.id.recycler_view)
     AutoLoadRecyclerView mRecyclerView;
-    @Bind(R.id.swipeRefreshLayout)
+    @BindView(R.id.swipeRefreshLayout)
     SwipeRefreshLayout mSwipeRefreshLayout;
-    @Bind(R.id.loading)
+    @BindView(R.id.loading)
     RotateLoading loading;
 
     private JokeAdapter mAdapter;
